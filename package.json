@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "postbuild": "node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
-    "cname": "echo app.xqr.codes>public/CNAME && echo app.xqr.codes>dist/CNAME",
+    "cname": "echo xqr.codes>public/CNAME && echo xqr.codes>dist/CNAME",
     "predeploy": "npm run build && npm run cname",
     "deploy": "gh-pages -d dist"
   },
