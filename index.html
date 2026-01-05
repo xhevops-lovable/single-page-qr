@@ -35,8 +35,9 @@
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://challenges.cloudflare.com">
   <meta name="theme-color" content="#111111" />
-  
+
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
@@ -57,10 +58,10 @@
 
   <!-- Cloudflare Verification -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7397193473597821"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV13GGF4HH"></script>
   <script>
@@ -70,9 +71,13 @@
 
     gtag('config', 'G-HV13GGF4HH');
   </script>
+  <script> function onTurnstileSuccess(token) { console.log("Human verified:", token); }  </script>
 </head>
 
 <body>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACKn6wWBN4bQfheV" data-theme="light" data-size="normal"
+    data-callback="onTurnstileSuccess">
+  </div>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
